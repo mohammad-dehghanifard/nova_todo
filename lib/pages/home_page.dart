@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nova_todo/pages/add_or_edit_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,7 +10,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, CupertinoPageRoute(builder: (context) => const AddOrEditPage()));
+        },
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
         backgroundColor: const Color(0xFF9395D3),
         child: const Icon(Icons.add,color: Colors.white),

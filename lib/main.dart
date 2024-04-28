@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:nova_todo/database/task_model.dart';
 import 'package:nova_todo/pages/home_page.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(TaskModelAdapter());
+  await Hive.openLazyBox("tasks");
   runApp(const MyApp());
 }
 
