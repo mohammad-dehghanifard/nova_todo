@@ -4,9 +4,10 @@ import 'package:nova_todo/database/task_model.dart';
 import 'package:nova_todo/pages/home_page.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(TaskModelAdapter());
-  await Hive.openLazyBox("tasks");
+  await Hive.openBox<TaskModel>("tasks");
   runApp(const MyApp());
 }
 
