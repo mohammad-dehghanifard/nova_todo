@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:nova_todo/database/task_model.dart';
 import 'package:nova_todo/pages/home_page.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  Hive.registerAdapter(TaskModelAdapter());
-  await Hive.openBox<TaskModel>("tasks");
+
+void main()  {
   runApp(const MyApp());
 }
 
