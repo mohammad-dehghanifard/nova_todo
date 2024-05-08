@@ -5,4 +5,6 @@ class AppString {
   static const editTask = "Edit Task";
   static const edit = "Edit";
   static const add = "Add";
+  static const titleHint = "title...";
+  static const detail = "detail...";
 }
